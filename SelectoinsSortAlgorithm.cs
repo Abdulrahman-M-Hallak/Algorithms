@@ -18,7 +18,7 @@ internal static class SelectoinsSortAlgorithm
     }
     public static List<int> SelectionSort(List<int> list)
     {
-        List<int> result = new List<int>(list.Count);
+        List<int> result = new(list.Count);
         for (int i = 0; i < result.Capacity; i++)
         {
             int smallest = FindSmallest(list);
