@@ -9,6 +9,6 @@ internal class QuickSortAlgorithm
         var greater = input.Skip(1).Where( x => x > pivot);
         var less = input.Skip(1).Where( x => x <= pivot );
         
-        return QuickSort(less).Concat(new List<int>() { pivot}).Concat(QuickSort(greater));
+        return QuickSort(less).Union(new List<int>() { pivot}).Union(QuickSort(greater));
     }
 }
