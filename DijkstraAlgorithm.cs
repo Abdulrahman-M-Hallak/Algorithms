@@ -44,7 +44,7 @@ internal class DijkstraAlgorithm
 
         };
 
-        var node = FindLowestCoseNode(costs);
+        var node = FindLowestCostNode(costs);
         while (node != null)
         {
             var cost = costs[node];
@@ -60,12 +60,12 @@ internal class DijkstraAlgorithm
 
             }
             _processed.Add(node);
-            node = FindLowestCoseNode(costs);
+            node = FindLowestCostNode(costs);
         }
         Console.WriteLine(String.Join(',' , parents));
     }
 
-    private static string FindLowestCoseNode(Dictionary<string, double> costs)
+    private static string FindLowestCostNode(Dictionary<string, double> costs)
     {
         var lowestCost = _infinity;
         string lowestCostNode = null;

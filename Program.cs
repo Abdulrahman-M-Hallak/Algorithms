@@ -14,5 +14,10 @@ internal class Program
         Console.WriteLine(RecursiveSumAlgorithm.NumberOfElements(ints2));
 
         Console.WriteLine(String.Join(',' ,QuickSortAlgorithm.QuickSort( ints2)));
+
+        BreadthFirstAlgorithm.BreadthFirst('a', 'e');
+
+        Console.WriteLine("***********************************************");
+        DijkstraAlgorithm.DijkstraShortestPath();
     }
 }
