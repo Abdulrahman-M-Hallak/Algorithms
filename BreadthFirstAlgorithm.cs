@@ -7,20 +7,31 @@ using System.Threading.Tasks;
 namespace Algorithms;
 internal class BreadthFirstAlgorithm
 {
-    private static Dictionary<char, List<char>> _graph = new()
+    private static Dictionary<string, List<string>> _graph = new()
     {
-        { 'a', new List<char> {'b' , 'c' } },
-        { 'b', new List<char> { 'd' }},
-        { 'c', new List<char> { 'e' } },
-        { 'd', new List<char> { 'f' }},
-        { 'e', new List<char> { }},
-        { 'f', new List<char> { }}
+        { "a", new List<string> {"b" , "c" } },
+        { "b", new List<string> { "d" }},
+        { "c", new List<string> { "e" } },
+        { "d", new List<string> { "f" }},
+        { "e", new List<string> { }},
+        { "f", new List<string> { }}
     };
 
-    public static bool BreadthFirst(char sourceNode)
+    public static bool BreadthFirst(string sourceNode)
     {
-        var searchQueue = new Queue<char>(_graph[sourceNode]);
-        var searchedNodes = new List<char>();
+        var searchQueue = new Queue<string>(_graph[sourceNode]);
+        var searchedNodes = new List<string>();
+
+        var parents = new Dictionary<string, string>();
+        foreach (var node in _graph.Keys)
+        {
+            if (_graph[sourceNode].Contains(node))
+            parents.Add(node, sourceNode);
+
+            else
+            parents.Add(node, null);
+        }
+
         while (searchQueue.Any())
         {
             var node = searchQueue.Dequeue();
@@ -35,14 +46,22 @@ internal class BreadthFirstAlgorithm
                 else
                 {
                     searchQueue = new(searchQueue.Concat(_graph[node]));
+                    foreach (var item in _graph[node])
+                    {
+                        parents[item] = node;
+                    }
                     searchedNodes.Add(node);
                 }
             }
         }
+        foreach (var item in parents)
+        {
+            Console.WriteLine($"{item.Value} is the parent of {item.Key}");
+        }
         return false;
     }
-    private static bool PersonIsSeller(char character)
+    private static bool PersonIsSeller(string character)
     {
-        return character == 'a';
+        return character == "a";
     }
 }

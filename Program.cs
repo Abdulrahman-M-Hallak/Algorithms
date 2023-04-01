@@ -15,9 +15,12 @@ internal class Program
 
         Console.WriteLine(String.Join(',' ,QuickSortAlgorithm.QuickSort( ints2)));
 
-        BreadthFirstAlgorithm.BreadthFirst('a', 'e');
+        BreadthFirstAlgorithm.BreadthFirst("a");
 
         Console.WriteLine("***********************************************");
         DijkstraAlgorithm.DijkstraShortestPath();
+
+        Console.WriteLine("***********************************************");
+        ApproximationAlgorithm.FindBestStates();
     }
 }
