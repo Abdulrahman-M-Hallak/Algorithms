@@ -1,6 +1,4 @@
-﻿using System.Collections.Specialized;
-
-namespace Algorithms;
+﻿namespace Algorithms;
 internal class ApproximationAlgorithm
 {
     private static HashSet<string> _statesNeeded = new HashSet<string>()

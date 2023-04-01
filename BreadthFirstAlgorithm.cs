@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Algorithms;
+﻿namespace Algorithms;
 internal class BreadthFirstAlgorithm
 {
     private static Dictionary<string, List<string>> _graph = new()

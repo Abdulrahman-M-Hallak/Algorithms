@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace Algorithms;
+﻿namespace Algorithms;
 internal static class BinarySearchAlgorithm
 {
     public static int? BinarySearch(List<int> list , int item)

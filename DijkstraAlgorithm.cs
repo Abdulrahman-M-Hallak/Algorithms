@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Algorithms;
+﻿namespace Algorithms;
 internal class DijkstraAlgorithm
 {
     private const double _infinity = double.PositiveInfinity;
